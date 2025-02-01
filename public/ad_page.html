@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        let adShown = false;
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('user_id');
+
+        (adsbygoogle = window.adsbygoogle || []).push({
+            requestNonPersonalizedAds: 1,
+            params: {
+                userId: userId,
+                ssvCallbackParams: {
+                    user_id: userId
+                }
+            }
+        });
+
+        function showAd() {
+            if(!adShown) {
+                const ad = new google.ads.AdManagerAd({
+                    adUnitPath: '/6355419/Travel/Europe',
+                    targeting: {
+                        userId: userId
+                    },
+                    ssvCallback: (reward) => {
+                        window.location.href = `https://t.me/your_bot?start=ad_completed_${userId}`;
+                    }
+                });
+                ad.load();
+                adShown = true;
+            }
+        }
+    </script>
+</head>
+<body onload="showAd()">
+    <h2>Watch this ad to earn tokens:</h2>
+    <div id="ad-container"></div>
+</body>
+</html>
