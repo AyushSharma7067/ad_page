@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Ad</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADMOB_PUB_ID"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Watch Ad to Earn Tokens</h1>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-4203324497373321"
+         data-ad-slot="3099539736"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
     <script>
-        // Initialize AdMob ads
-        (adsbygoogle = window.adsbygoogle || []).push({
-            requestNonPersonalizedAds: 1,
-            params: {
-                userId: new URLSearchParams(window.location.search).get('user_id')
-            }
-        });
-
-        function showAd() {
-            // Load the ad
-            (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <p>After watching the ad, click the button below to return to the bot and claim your token.</p>
+    <button onclick="redirectToBot()">Return to Bot</button>
+    <script>
+        function redirectToBot() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const user_id = urlParams.get('user_id');
+            window.location.href = `https://t.me/BgRemoverMagicbot?start=ad_completed_${user_id}`;
         }
     </script>
-</head>
-<body onload="showAd()">
-    <h2>Watch this ad to earn tokens:</h2>
-    <!-- Ad container -->
-    <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="pub-4203324497373321"
-          data-ad-slot="9477810473"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
 </body>
 </html>
