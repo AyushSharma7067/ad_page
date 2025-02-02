@@ -3,31 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watch Ad</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client="5224354917"
-            crossorigin="anonymous"></script>
+    <title>AdMob Integration</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=5658022955"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '5658022955');
+    </script>
 </head>
 <body>
-    <h1>Watch Ad to Earn Tokens</h1>
+    <!-- Placeholder for Ad -->
+    <div id="ad-placeholder"></div>
+
+    <!-- AdMob script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <ins class="adsbygoogle"
          style="display:block"
-         data-ad-client="ca-pub-3940256099942544"
-         data-ad-slot="5224354917"
+         data-ad-client="ca-pub-4203324497373321"
+         data-ad-slot="5658022955"
          data-ad-format="auto"
-         data-full-width-responsive="true"
-         data-adtest="on"
-         data-ad-event="rewarded"></ins>
+         data-full-width-responsive="true"></ins>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    <p>After watching the ad, click the button below to return to the bot and claim your token.</p>
-    <button onclick="redirectToBot()">Return to Bot</button>
-    <script>
-        function redirectToBot() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const user_id = urlParams.get('user_id');
-            window.location.href = `https://t.me/BgRemoverMagicbot?start=ad_completed_${user_id}`;
-        }
     </script>
 </body>
 </html>
